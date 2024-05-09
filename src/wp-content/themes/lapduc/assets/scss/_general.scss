@@ -1,0 +1,95 @@
+.page-container {
+    width: 100%;
+    max-width: 1170px !important;
+    margin: 0 auto !important;
+    position: relative;
+
+    @media(max-width: 1170px) {
+        max-width: 1138px !important;
+        padding: 0 24px;
+    }
+
+    @media(max-width: 992px) {
+        max-width: 960px !important;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 720px !important;
+    }
+
+    @media (max-width: 576px) {
+        max-width: unset !important;
+    }
+}
+
+body .page {
+
+    .heading p,
+    .heading {
+        font-family: $font-secondary;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        color: $color-secondary;
+        text-transform: uppercase;
+
+    }
+
+    .sub-heading {
+
+        p,
+        a {
+            font-family: $font-secondary;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: center;
+            font-style: italic;
+            color: $color-primary;
+        }
+    }
+
+    .desc {
+
+        p,
+        a {
+            font-family: $font-secondary;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+            font-style: italic;
+            color: $gray;
+        }
+    }
+
+    .button-view-more {
+        a {
+            width: max-content;
+            padding: 0 50px;
+            height: 52px;
+            border: 1px solid $color-primary;
+            border-radius: 8px;
+            background-color: $color-primary !important;
+            color: $color-white !important;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01px;
+            text-align: center;
+            font-family: $font-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            margin: 0 auto;
+
+            &:hover {
+                background-color: $color-white !important;
+                color: $color-primary !important;
+                border: 1px solid $color-primary;
+            }
+        }
+    }
+}
