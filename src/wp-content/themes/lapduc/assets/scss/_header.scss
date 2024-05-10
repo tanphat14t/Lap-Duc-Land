@@ -9,7 +9,7 @@
     z-index: 999;
 
     @media(max-width: 991px) {
-        // height: 62px;
+        height: 145px;
     }
 
     &.scrolled {
@@ -31,14 +31,16 @@
             height: 100%;
 
             .navbar-toggler {
-                display: flex;
-                width: 100%;
-                height: max-content;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px 0 0 0;
-                position: relative;
-                z-index: 2;
+                @media(max-width: 991px) {
+                    display: flex;
+                    width: 100%;
+                    height: max-content;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px 0 0 0;
+                    position: relative;
+                    z-index: 2;
+                }
 
                 svg {
                     transition: all 0.4s;
@@ -112,8 +114,9 @@
 
                     >.menu-item-has-children {
                         &:not(:last-child) {
-                            border-bottom: 1px solid #CFD8D71A;
-
+                            @media(max-width: 991px) {
+                                border-bottom: 1px solid #CFD8D71A;
+                            }
                         }
 
                         >a {

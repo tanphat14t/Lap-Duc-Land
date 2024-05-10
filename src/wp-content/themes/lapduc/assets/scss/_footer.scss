@@ -6,16 +6,34 @@ footer#footer {
         display: flex;
         gap: 76px;
         margin-bottom: 24px;
+
+        @media(max-width:991px) {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        @media(max-width: 768px) {
+            margin-bottom: 0;
+            gap: 0;
+        }
     }
 
     .footer-left {
         width: calc(30% - 38px);
+
+        @media(max-width:991px) {
+            width: 100%;
+        }
 
         .logo-footer {
             display: block;
             aspect-ratio: 209 / 177;
             width: 70%;
             margin: 0 auto;
+
+            @media(max-width:991px) {
+                width: 40%;
+            }
 
             img {
                 width: 100%;
@@ -41,17 +59,45 @@ footer#footer {
         width: calc(70% - 38px);
         padding-top: 42px;
 
+        @media(max-width:991px) {
+            width: 100%;
+            padding-top: 0;
+        }
+
         .box-content {
             display: flex;
             gap: 90px;
-            @media(max-width: 1199px){
+
+            @media(max-width: 1199px) {
                 gap: 40px;
+                justify-content: space-between;
+            }
+
+            @media(max-width: 991px) {
+                justify-content: space-between;
+            }
+
+            @media(max-width: 768px) {
+                flex-direction: column;
+                gap: 0;
             }
         }
     }
 
     .item-content {
         width: calc(100% / 3);
+
+        @media(max-width: 991px) {
+            width: max-content;
+            max-width: calc(100% / 3);
+        }
+
+        @media(max-width: 768px) {
+            width: 100%;
+            max-width: 100%;
+            padding: 16px 0;
+            border-top: 1px solid #FFFFFF14;
+        }
 
         .item-title a,
         .item-title {
@@ -64,6 +110,11 @@ footer#footer {
             margin-bottom: 25px;
             cursor: default;
             pointer-events: none;
+
+            @media(max-width: 768px) {
+                width: 100%;
+                margin-bottom: 16px;
+            }
         }
 
         .item-submenu {
@@ -113,8 +164,17 @@ footer#footer {
     .footer__menu {
         padding: 0;
 
+        @media(max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .menu-item:not(.item-title) {
             margin-bottom: 12px;
+
+            @media(max-width: 768px) {
+                width: 50%;
+            }
 
             &:last-child {
                 margin-bottom: 0;
@@ -139,8 +199,11 @@ footer#footer {
     // list-social
     .list-social {
         padding: 0;
-        display: flex;
         gap: 6px;
+
+        @media(max-width: 991px) {
+            margin: 16px 0 24px;
+        }
 
         .item-social {
             a {
@@ -154,8 +217,19 @@ footer#footer {
                 align-items: center;
                 transition: all 0.4s;
 
+                @media(max-width: 768px) {
+                    width: 44px;
+                    height: 44px;
+                }
+
                 &:hover {
-                    opacity: 0.7;
+                    background-color: white;
+
+                    svg {
+                        path {
+                            fill: #113A39;
+                        }
+                    }
                 }
             }
         }
@@ -165,6 +239,16 @@ footer#footer {
     .copy-right {
         border-top: 1px solid #FFFFFF14;
         padding-top: 24px;
+
+        @media(max-width: 768px) {
+            margin: 0 24px;
+        }
+
+        .page-container {
+            @media(max-width: 768px) {
+                padding: 0 !important;
+            }
+        }
 
         .copy-right-wrap {
             display: flex;
@@ -181,6 +265,20 @@ footer#footer {
                 display: flex;
                 flex-direction: column;
                 row-gap: 6px;
+
+                @media(max-width: 768px) {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+
+                em {
+                    font-size: 14px;
+
+                    @media(max-width: 768px) {
+                        font-size: 12px;
+                        line-height: 21px;
+                    }
+                }
             }
         }
 

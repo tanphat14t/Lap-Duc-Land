@@ -38,6 +38,21 @@ if ($hotline) {
                         </p>
                     </div>
                 <?php endif; ?>
+                <?php if (have_rows('list_social_footer', 'option')) : ?>
+                    <ul class="list-social d-flex d-lg-none justify-content-center">
+                        <?php while (have_rows('list_social_footer', 'option')) : the_row(); ?>
+                            <li class="item-social">
+                                <?php
+                                $link = get_sub_field('link_social');
+                                if ($link) : ?>
+                                    <a class="button" target="_blank" href="<?php echo esc_url($link); ?>">
+                                        <?php echo get_sub_field('icon_svg_social'); ?>
+                                    </a>
+                                <?php endif; ?>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php endif; ?>
             </div>
             <div class="footer-right">
                 <div class="box-content">
@@ -98,9 +113,9 @@ if ($hotline) {
                                     <a class="color-primary" href="mailto:<?php echo $email_hotline; ?>"><?php echo $email_hotline; ?></a>
                                 </div>
                             <?php endif; ?>
-                            <?php if (have_rows('list_social_footer','option')) : ?>
-                                <ul class="list-social">
-                                    <?php while (have_rows('list_social_footer','option')) : the_row(); ?>
+                            <?php if (have_rows('list_social_footer', 'option')) : ?>
+                                <ul class="list-social d-none d-lg-flex">
+                                    <?php while (have_rows('list_social_footer', 'option')) : the_row(); ?>
                                         <li class="item-social">
                                             <?php
                                             $link = get_sub_field('link_social');

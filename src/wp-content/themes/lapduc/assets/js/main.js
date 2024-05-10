@@ -3,7 +3,7 @@ $ = jQuery;
 
 $(document).ready(function () {
   header();
-  slideHome();
+  slickSlide();
 });
 function header() {
   $(window).scroll(function () {
@@ -33,15 +33,35 @@ function header() {
   }
 }
 
-function slideHome() {
+function slickSlide() {
+  // slide Homepage
   if ($("#slick-slider-home").length) {
     $("#slick-slider-home").slick({
       dots: true,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+          },
+        },
+      ],
     });
   }
   if ($(".list-post").length) {
     $(".list-post").slick({
       slidesToShow: 3,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+      ],
     });
   }
   if ($(".slide-brands").length) {
@@ -56,6 +76,30 @@ function slideHome() {
       speed: 8000,
       pauseOnHover: false,
       cssEase: "linear",
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+  }
+
+  // slide about page
+  if ($(".about-ssTwo-slide").length) {
+    $(".about-ssTwo-slide").slick({
+      dots: true,
+      slidesToShow: 1,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+          },
+        },
+      ],
     });
   }
 }
