@@ -102,4 +102,16 @@ function slickSlide() {
       ],
     });
   }
+  if ($(".slick-slide-image").length) {
+    $(".slick-slide-image").slick({
+      dots: false,
+      arrows: false,
+      slidesToShow: 4,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 8000,
+      pauseOnHover: false,
+      cssEase: "linear",
+    });
+  }
 }

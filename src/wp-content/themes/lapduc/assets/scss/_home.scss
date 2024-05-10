@@ -1,6 +1,6 @@
 // banner section
 body .page {
-    // background-color: #F8F5EF;
+    background-color: #F8F5EF;
 
     .section-banner {
         width: 100%;
@@ -23,6 +23,9 @@ body .page {
 
             @media(max-width: 768px) {
                 display: none;
+                font-size: 32px;
+                line-height: 48px;
+
             }
         }
     }

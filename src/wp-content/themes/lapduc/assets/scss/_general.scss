@@ -15,6 +15,7 @@
     }
 }
 
+
 body .page {
 
     .heading p,
@@ -53,7 +54,9 @@ body .page {
     }
 
     .sub-heading-big {
-
+        @media(max-width: 768px){
+            margin-bottom: 8px;
+        }
         a,
         p {
             font-weight: 300;
@@ -61,6 +64,10 @@ body .page {
             font-size: 32px;
             font-family: $font-primary;
             color: #FFFFFFCC;
+            @media(max-width: 991px){
+                font-size: 16px;
+                line-height: 24px;
+            }
         }
     }
 

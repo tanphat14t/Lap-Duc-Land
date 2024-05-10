@@ -40,6 +40,9 @@
                     padding: 20px 0 0 0;
                     position: relative;
                     z-index: 2;
+                    border: 0;
+                    box-shadow: none !important;
+                    outline: none !important;
                 }
 
                 svg {
@@ -146,13 +149,13 @@
                                     border-bottom: 0 !important;
                                 }
 
-                                &.current_page_item {
-                                    >a {
-                                        @media(min-width: 992px) {
-                                            color: $color-primary;
-                                        }
-                                    }
-                                }
+                                // &.current_page_item {
+                                //     >a {
+                                //         @media(min-width: 992px) {
+                                //             color: $color-primary;
+                                //         }
+                                //     }
+                                // }
 
                                 >a {
                                     font-size: 16px;
