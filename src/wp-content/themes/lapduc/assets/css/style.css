@@ -2474,4 +2474,104 @@ body .page .jewelry-ssTwo .wrapper .splide__store .splide__pagination button.is-
   opacity: 1;
 }
 
+body .page .real-estate-ssOne {
+  padding-top: 80px;
+  padding-bottom: 295px;
+  width: 100%;
+}
+body .page .real-estate-ssOne .heading {
+  width: 60%;
+  margin: 0 auto 32px;
+}
+body .page .real-estate-ssOne .wpb_text_column {
+  margin-bottom: 0;
+}
+body .page .real-estate-ssOne .wpb_text_column p {
+  font-size: 16px;
+  line-height: 27px;
+  color: #302F2F;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+body .page .real-estate-ssTwo {
+  padding-top: 0 !important;
+  padding-bottom: 132px !important;
+}
+body .page .real-estate-ssTwo .wpb_single_image {
+  margin-bottom: 0;
+  aspect-ratio: 1440/570;
+  width: 100%;
+  position: relative;
+}
+body .page .real-estate-ssTwo .wpb_single_image::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+}
+body .page .real-estate-ssTwo .wpb_single_image * {
+  width: 100%;
+  height: 100%;
+}
+body .page .real-estate-ssTwo .wpb_single_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body .page .real-estate-ssTwo .heading {
+  position: absolute;
+  left: 50%;
+  top: 132px;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+}
+@media (max-width: 1280px) {
+  body .page .real-estate-ssTwo .heading {
+    top: 100px;
+  }
+}
+body .page .real-estate-ssTwo .box-table {
+  background-color: white;
+  box-shadow: 0 40px 50px 0 rgba(93, 76, 48, 0.0784313725);
+  margin-top: -324px;
+}
+body .page .real-estate-ssTwo .box-table table thead {
+  background-color: #113a39;
+}
+body .page .real-estate-ssTwo .box-table table thead td {
+  color: white;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 700;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+body .page .real-estate-ssTwo .box-table table tbody td {
+  height: max-content !important;
+  border: 1px solid #E7E4DE;
+  padding: 32px 12px;
+  color: #302F2F;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 700;
+  text-align: center;
+}
+body .page .real-estate-ssTwo .box-table p {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  color: #595959;
+  display: block;
+  background-color: #FFFFFF;
+  padding: 32px 30px 60px;
+}
+
 /*# sourceMappingURL=style.css.map */
