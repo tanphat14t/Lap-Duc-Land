@@ -125,4 +125,10 @@ body .page {
             }
         }
     }
+
+    .color-banner-heading{
+        @media(max-width:768px){
+            color: #FFCB1F !important;
+        }
+    }
 }

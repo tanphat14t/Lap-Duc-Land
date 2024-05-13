@@ -114,4 +114,93 @@ function slickSlide() {
       cssEase: "linear",
     });
   }
+
+  // slide Jewelry
+  let splideStoreImages = $(".splide__store");
+  if (splideStoreImages.length) {
+    var stores = new Splide(".splide__store", {
+      perPage: 1,
+      type: "fade",
+      pagination: false,
+      arrows: true,
+      // drag: false,
+      breakpoints: {
+        768: {
+          arrows: false,
+          pagination: true,
+        },
+      },
+    });
+    stores.mount();
+  }
+  if ($(".gallery-image").length) {
+    var elms = document.getElementsByClassName("gallery-image");
+    for (var i = 0, len = elms.length; i < len; i++) {
+      var elmSplideMain = elms[i].getElementsByClassName(
+        "splide-image__store"
+      )[0];
+      var elmSplideThumbnail = elms[i].getElementsByClassName(
+        "splide-image__store--thumb"
+      )[0];
+      var splideMain = new Splide(elmSplideMain, {
+        type: "loop",
+        perPage: 1,
+        pagination: false,
+        arrows: false,
+        gap: 28,
+        padding: {
+          right: "25%",
+          left: "25%",
+        },
+        breakpoints: {
+          991: {
+            padding: {
+              right: "16%",
+              left: "16%",
+            },
+          },
+          768: {
+            arrows: false,
+            padding: {
+              right: 0,
+              left: 0,
+            },
+          },
+        },
+      });
+      var splideThumbnail = new Splide(elmSplideThumbnail, {
+        rewind: false,
+        perPage: 9,
+        isNavigation: true,
+        gap: 20,
+        pagination: false,
+        arrows: true,
+        cover: true,
+        padding: {
+          right: 80,
+        },
+        breakpoints: {
+          991: {
+            perPage: 6,
+            gap: 8,
+            padding: {
+              right: 40,
+            },
+          },
+          768: {
+            perPage: 4,
+            arrows: false,
+            gap: 4,
+            padding: {
+              right: 40,
+            },
+          },
+        },
+      });
+
+      splideMain.sync(splideThumbnail);
+      splideMain.mount();
+      splideThumbnail.mount();
+    }
+  }
 }

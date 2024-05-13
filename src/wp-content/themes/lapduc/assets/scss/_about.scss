@@ -1,6 +1,7 @@
 .about-section-one {
     padding: 0 !important;
     margin-top: -250px;
+
     // background-color: #FFFFFF;
     @media(max-width: 1280px) {
         margin-top: -192px;
@@ -53,9 +54,11 @@
     .row-image {
         padding-bottom: 130px;
         background-color: #fff;
+
         @media(max-width: 991px) {
             padding-bottom: 64px;
         }
+
         &::before {
             content: '';
             position: absolute;
@@ -656,16 +659,17 @@
 .about-section-six {
     overflow: unset !important;
 
-    @media(max-width: 1199px) {
-        display: none;
-    }
-
     .custom-height-element {
         display: flex;
         align-items: stretch;
-        // margin-bottom: 30px;
         column-gap: 30px;
         margin: 0 0 30px;
+
+        @media(max-width: 768px) {
+            flex-wrap: wrap;
+            row-gap: 24px;
+            margin: 0 0 24px;
+        }
 
         &::before,
         &::after {
@@ -675,22 +679,45 @@
 
     .page-container {
         padding: 62px 0 140px !important;
+
+        @media(max-width: 1199px) {
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 0 !important;
+        }
     }
 
     .ss-six-image {
         position: unset;
 
-        .wpb_single_image {
-            height: calc(100% + 20px);
-            aspect-ratio: 402 / 760;
-            position: absolute;
-            width: auto;
-            margin-bottom: 0;
-            left: 0;
-            bottom: 170px;
+        @media(max-width: 1199px) {
+            width: 100%;
+        }
 
-            * {
-                height: 100%;
+        * {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+        }
+
+        >.vc_column-inner {
+            @media(max-width: 1199px) {
+                padding: 0;
+            }
+        }
+
+        .wpb_single_image {
+            margin-bottom: 0;
+            aspect-ratio: 375 / 220;
+
+            @media(min-width: 1200px) {
+                height: calc(100% + 20px);
+                aspect-ratio: 402 / 760;
+                position: absolute;
+                width: auto;
+                margin-bottom: 0;
+                left: 0;
+                bottom: 170px;
             }
 
             img {
@@ -706,6 +733,11 @@
     .content-right {
         padding-left: 40px;
 
+        @media(max-width: 1199px) {
+            width: 100%;
+            padding: 0 24px;
+        }
+
         >.vc_column-inner {
             padding: 0;
         }
@@ -718,12 +750,26 @@
             color: $color-white;
             margin-bottom: 40px;
             text-transform: uppercase;
+
+            @media(max-width: 768px) {
+                font-size: 20px;
+                line-height: 30px;
+                margin-bottom: 14px;
+            }
         }
 
         .box-content {
             background-color: #C89E62;
             padding: 30px 24px;
             box-shadow: 0 40px 50px 0 #5D4C3014;
+
+            @media(max-width: 768px) {
+                width: 100%;
+            }
+
+            >.vc_column-inner {
+                padding: 0;
+            }
 
             .vc_custom_heading {
                 font-size: 16px;
@@ -733,6 +779,9 @@
                 color: $color-white;
                 margin-bottom: 12px;
                 text-transform: uppercase;
+                @media(max-width: 768px) {
+                    font-size: 14px;
+                }
             }
 
             .wpb_text_column {
@@ -750,56 +799,6 @@
     }
 }
 
-.about-section-six-mobile {
-    display: none;
-    padding: 30px 0 0 !important;
-
-    @media(max-width: 1199px) {
-        display: block;
-    }
-
-    .vc_custom_heading {
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 700;
-        font-family: $font-secondary;
-        color: white;
-        margin-bottom: 14px;
-        text-transform: uppercase;
-    }
-
-    .wpb_text_column {
-        margin-bottom: 66;
-
-        p {
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 400;
-            font-family: $font-primary;
-            color: white;
-        }
-    }
-    .wpb_single_image{
-        margin: 0 -24px;
-        width: unset;
-        *{
-            width: 100%;
-        }
-        img{
-            aspect-ratio: 375 / 220;
-            object-fit: cover;
-        }
-    }
-    >.page-container {
-
-        >.wpb_column {
-
-            >.vc_column-inner {
-                padding: 0 !important;
-            }
-        }
-    }
-}
 
 .about-section-seven {
     padding: 12px 0 !important;

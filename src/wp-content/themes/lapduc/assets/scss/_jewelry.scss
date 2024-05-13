@@ -1,0 +1,421 @@
+body {
+    .page {
+        .jewelry-ssOne {
+            padding-top: 116px;
+            background-color: white;
+
+            @media(max-width: 991px) {
+                padding-top: 0;
+            }
+
+            >.wpb_column {
+
+                >.vc_column-inner {
+                    padding: 0;
+
+                    >.wpb_wrapper {
+                        >.vc_row {
+                            display: flex;
+                            column-gap: 30px;
+                            align-items: stretch;
+
+                            @media(max-width: 991px) {
+                                flex-direction: column;
+
+                            }
+
+                            &::before,
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .box-image {
+                aspect-ratio: 705 / 550;
+
+                @media(max-width: 991px) {
+                    aspect-ratio: 375 / 260;
+                    width: 100%;
+                }
+
+                >.vc_column-inner {
+                    padding: 0;
+                }
+
+                * {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .wpb_single_image {
+                    margin-bottom: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .box-content {
+                position: relative;
+
+                @media(max-width: 991px) {
+                    aspect-ratio: unset;
+                    height: max-content;
+                    width: 100%;
+                }
+
+
+                >.vc_column-inner {
+                    padding: 74px 10% 74px 70px;
+                    width: 100%;
+                    height: 100%;
+
+                    @media(min-width: 992px) and (max-width: 1199px) {
+                        padding: 40px 24px;
+                    }
+
+                    @media(max-width: 768px) {
+                        padding: 40px 24px;
+                    }
+
+                    >.wpb_wrapper {
+                        position: relative;
+                        z-index: 1;
+                    }
+                }
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: linear-gradient(0deg, rgba(17, 58, 57, 0) 0%, rgba(17, 58, 57, 0.28) 0, rgba(17, 58, 57, 0.8) 54%, rgba(17, 58, 57, 1) 93%);
+                }
+
+                .vc_custom_heading {
+                    margin-bottom: 36px;
+                    font-size: 40px;
+                    line-height: 60px;
+                    color: $color-primary;
+                    font-family: $font-secondary;
+                    font-weight: 700;
+                    text-transform: uppercase;
+
+                    @media(max-width: 768px) {
+                        font-size: 24px;
+                        line-height: 36px;
+                        margin-bottom: 12px;
+                    }
+                }
+
+                .wpb_text_column {
+                    margin-bottom: 0;
+
+                    p {
+                        font-size: 18px;
+                        line-height: 27px;
+                        color: #CFD8D7;
+                        font-family: $font-secondary;
+                        font-weight: 400;
+
+                        @media(max-width: 768px) {
+                            font-size: 14px;
+                            line-height: 21px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .jewelry-ssTwo {
+            padding-top: 255px;
+            position: relative;
+            background-color: white;
+
+            @media(max-width: 768px) {
+                padding-top: 56px;
+            }
+
+            &::before {
+                content: "";
+                background-image: url('../imgs/bg_slide_jewelry.png');
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: contain;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                left: 0;
+
+                @media(max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            .wrapper {
+                margin: 0 -15px;
+
+                .splide__store {
+                    margin-top: 80px;
+
+                    @media(max-width: 768px) {
+                        margin-top: 28px;
+
+                    }
+
+                    >.splide__track {
+                        .splide__list {
+
+                            .splide-image__store {
+                                position: relative;
+
+                                &::before,
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    bottom: 142px;
+                                    width: calc(25% - 26px);
+                                    height: 100%;
+                                    left: 0;
+                                    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 60%);
+                                    z-index: 1;
+
+                                    @media(max-width: 991px) {
+                                        width: calc(16% - 26px);
+                                    }
+
+                                    @media(max-width: 768px) {
+                                        display: none;
+                                    }
+                                }
+
+                                &::after {
+                                    right: 0;
+                                    left: unset;
+                                }
+
+                                .splide__track {
+                                    padding-bottom: 144px;
+
+                                    @media(max-width: 768px) {
+                                        padding-bottom: 28px;
+                                    }
+                                }
+
+                                .splide__list {
+                                    .splide__slide {
+                                        aspect-ratio: 770 / 450;
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: flex-end;
+                                        transition: all 400ms;
+
+                                        &.is-active {
+                                            box-shadow: 0 50px 50px 0 #0000002E;
+
+                                            @media(max-width: 768px) {
+                                                box-shadow: 0 20px 30px 0 #0000002E;
+                                            }
+
+                                            img {
+                                                max-height: 100%;
+                                            }
+
+                                        }
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            max-height: calc(100% - 60px);
+                                            transition: all 0.4s;
+
+                                            @media(max-width: 768px) {
+                                                max-height: 100%;
+                                            }
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                            .splide-image__store--thumb {
+                                .splide__list {
+                                    .splide__slide {
+                                        aspect-ratio: 1;
+
+                                        &.is-active {
+                                            border-color: $color-secondary;
+                                        }
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        }
+
+                                    }
+
+
+                                }
+
+                                .splide__arrow {
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    background-color: $color-white;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+                                    background-color: white;
+
+                                    &::after {
+                                        content: "";
+                                        background-image: url('../imgs/icons/arrow-left-2.svg');
+                                        background-repeat: no-repeat;
+                                        background-size: 24px 24px;
+                                        background-position: center;
+                                        width: 24px;
+                                        height: 24px;
+                                        display: block;
+                                    }
+
+                                    &--next {
+                                        right: 18%;
+
+                                        @media(max-width: 991px) {
+                                            right: 12%;
+                                        }
+                                    }
+
+                                    &--prev {
+                                        left: 18%;
+
+                                        @media(max-width: 991px) {
+                                            left: 12%;
+                                        }
+
+                                        &::after {
+                                            content: "";
+                                            background-image: url('../imgs/icons/arrow-left-1.svg');
+                                        }
+                                    }
+
+                                    svg {
+                                        display: none;
+                                    }
+
+                                }
+                            }
+
+                            .bottom-slide {
+                                max-width: 770px;
+                                width: 100%;
+                                margin: 52px auto 0;
+
+                                @media(max-width: 768px) {
+                                    margin-top: 24px;
+                                    padding: 0 24px 40px;
+
+                                }
+
+                                .album {
+                                    font-size: 16px;
+                                    line-height: 27px;
+                                    color: #595959;
+                                    font-weight: 400;
+                                    font-family: $font-primary;
+
+                                    @media(max-width: 768px) {
+                                        text-align: center;
+                                    }
+                                }
+
+                                .name__store {
+                                    font-size: 24px;
+                                    line-height: 27px;
+                                    color: #302F2F;
+                                    font-weight: 600;
+                                    font-family: $font-primary;
+                                    margin-top: 12px;
+                                    padding-bottom: 28px;
+                                    border-bottom: 1px solid $color-primary;
+                                    text-transform: uppercase;
+
+                                    @media(max-width: 768px) {
+                                        font-size: 20px;
+                                        margin-top: 8px;
+                                        padding-bottom: 16px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+
+
+
+                        .page-container {
+                            max-width: 770px !important;
+
+                            .splide__arrows {
+                                display: flex;
+                                gap: 30px;
+                                justify-content: flex-end;
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+
+                                .splide__arrow {
+                                    position: unset;
+                                    width: 64px;
+                                    height: 64px;
+                                    border: 1px solid #6F5B3A;
+                                    border-radius: 50%;
+                                    background-color: $color-white;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    svg {
+                                        fill: transparent;
+                                        width: 32px;
+                                        height: 32px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .splide__pagination {
+                        bottom: 0;
+
+                        button {
+                            transform: scale(1) !important;
+                            opacity: 0.4;
+                            background: #C4A67B;
+                            margin: 5px;
+
+                            &.is-active {
+                                background: #C4A67B;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

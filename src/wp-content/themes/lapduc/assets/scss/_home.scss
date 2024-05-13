@@ -637,10 +637,10 @@ body .page {
     // section four
     .home-section-four {
         padding: 127px 0 55px !important;
+        background-color: white;
 
         @media(max-width: 768px) {
             padding: 110px 0 55px !important;
-            background-color: white;
         }
 
         .heading {
