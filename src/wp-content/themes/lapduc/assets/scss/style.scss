@@ -1,6 +1,7 @@
 @import "mixins";
 @import "variables";
 @import "reset";
+@import "loading";
 @import "general";
 
 
@@ -12,3 +13,9 @@
 @import "business";
 @import "jewelry";
 @import "real-estate";
+@import "recruiment";
+@import "news";
+
+
+// post
+@import "post-detail";

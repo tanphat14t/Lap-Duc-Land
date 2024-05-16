@@ -41,6 +41,7 @@ if (function_exists('add_image_size')) {
 add_theme_support('post-thumbnails', array(
     'post',
     'page',
-    'custom-post-type-name',
+    'recruiment',
+    'stores'
 ));
-add_theme_support('custom-logo');
+

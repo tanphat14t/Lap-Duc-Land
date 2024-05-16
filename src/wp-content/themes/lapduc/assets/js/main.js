@@ -4,6 +4,9 @@ $ = jQuery;
 $(document).ready(function () {
   header();
   slickSlide();
+  loadmoreRecruiment();
+  paginationPost();
+  loadmorePostDetail();
 });
 function header() {
   $(window).scroll(function () {
@@ -22,9 +25,11 @@ function header() {
       $(this).addClass("hidden");
       $(".btn-toggle .icon-close").removeClass("hidden");
       $(".menu-primary-menu-container").addClass("is-show");
+      $("body").addClass("overflow-hidden");
     });
     $(".btn-toggle .icon-close").on("click", function (e) {
       e.preventDefault();
+      $("body").removeClass("overflow-hidden");
       $(".navbar-brand").removeClass("showMenu");
       $(this).addClass("hidden");
       $(".btn-toggle .icon-bars").removeClass("hidden");
@@ -123,7 +128,7 @@ function slickSlide() {
       type: "fade",
       pagination: false,
       arrows: true,
-      // drag: false,
+      drag: false,
       breakpoints: {
         768: {
           arrows: false,
@@ -169,6 +174,7 @@ function slickSlide() {
         },
       });
       var splideThumbnail = new Splide(elmSplideThumbnail, {
+        type: "loop",
         rewind: false,
         perPage: 9,
         isNavigation: true,
@@ -203,4 +209,202 @@ function slickSlide() {
       splideThumbnail.mount();
     }
   }
+
+  // news
+  if ($(".outstanding .list-news").length && screen.width < 992) {
+    $(".outstanding .list-news").slick({
+      slidesToShow: 3,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            arrows: false,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 525,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+            dots: false,
+          },
+        },
+      ],
+    });
+  }
+
+  // bat dong san
+  if ($(".slide-area").length) {
+    $(".slide-area").slick({
+      slidesToShow: 3,
+      dots: false,
+      settings: "unslick",
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 525,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+      ],
+    });
+  }
+}
+
+function loadmoreRecruiment() {
+  var offset = 4;
+  $(".loadmore-recruiment").on("click", function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: "post",
+      dataType: "html",
+      async: true,
+      url: ajaxUrl,
+      data: {
+        action: "loadmore_recruiment",
+        offset: offset,
+      },
+      beforeSend: function () {
+        $(".loadmore-recruiment .loader").removeClass("d-none");
+        $(".loadmore-recruiment").prop("disabled", true);
+      },
+      success: function (response) {
+        if (response.trim().length > 0) {
+          $(".recruiment .page-container .row").append(response);
+          offset += 4;
+          $(".loadmore-recruiment .loader").addClass("d-none");
+          $(".loadmore-recruiment").prop("disabled", false);
+        } else {
+          // No more posts
+          $(".loadmore-recruiment").hide();
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("The following error occurred: " + textStatus, errorThrown);
+      },
+    });
+  });
+}
+function loadmorePostDetail() {
+  var offset = 4;
+  $(".single-detail .button-view-more a").on("click", function (e) {
+    e.preventDefault();
+    let idPost = $(this).data("id");
+    $.ajax({
+      type: "post",
+      dataType: "html",
+      async: true,
+      url: ajaxUrl,
+      data: {
+        action: "loadmore_postdetail",
+        offset: offset,
+        idPost: idPost,
+      },
+      beforeSend: function () {},
+      success: function (response) {
+        if (response.trim().length > 0) {
+          $(".single-detail .list").append(response);
+          offset += 4;
+        } else {
+          // No more posts
+          $(".single-detail .button-view-more").hide();
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("The following error occurred: " + textStatus, errorThrown);
+      },
+    });
+  });
+}
+function paginationPost() {
+  $("body").on(
+    "click",
+    ".knowledge .custom-pagination a.page-numbers",
+    function (e) {
+      e.preventDefault();
+      var href = $(this).attr("href");
+      var paged = detectUrlType(href);
+      $.ajax({
+        type: "post",
+        dataType: "html",
+        async: true,
+        url: ajaxUrl,
+        data: {
+          action: "pagination",
+          paged: paged,
+        },
+        beforeSend: function () {},
+        success: function (response) {
+          if (response) {
+            $(".knowledge .wrapper-post").html(response);
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(
+            "The following error occurred: " + textStatus,
+            errorThrown
+          );
+        },
+      });
+    }
+  );
+}
+
+function detectUrlType(url) {
+  var ajaxUrlRegex = /admin-ajax\.php\?paged=\d+/;
+  var pageUrlRegex = /\/page\/\d+\/?$/;
+  let number = "";
+  if (ajaxUrlRegex.test(url)) {
+    number = getParameterValueFromUrl(url);
+    return number;
+  } else if (pageUrlRegex.test(url)) {
+    number = getPageNumberFromUrl(url);
+    return number;
+  } else {
+    return "unknown";
+  }
+}
+function getPageNumberFromUrl(url) {
+  var queryRegex = /[?&]paged=(\d+)/;
+  var urlRegex = /\/(\d+)\/?$/;
+
+  var queryMatch = url.match(queryRegex);
+  if (queryMatch) {
+    return queryMatch[1];
+  }
+
+  var urlMatch = url.match(urlRegex);
+  if (urlMatch) {
+    return urlMatch[1];
+  }
+
+  return null;
+}
+function getParameterValueFromUrl(url) {
+  var queryString = url.split("?")[1];
+  if (!queryString) return null;
+
+  var parameters = queryString.split("&");
+
+  for (var i = 0; i < parameters.length; i++) {
+    var parameterParts = parameters[i].split("=");
+    if (parameterParts[0] === "paged") {
+      return parameterParts[1];
+    }
+  }
+  return null;
 }

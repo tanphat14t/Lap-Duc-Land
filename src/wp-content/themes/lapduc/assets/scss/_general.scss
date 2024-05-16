@@ -1,8 +1,9 @@
 .page-container {
-    width: 100%;
+    width: 100% !important;
     max-width: 1170px !important;
     margin: 0 auto !important;
-    position: relative;
+    position: relative !important;
+    left: unset !important;
 
     @media(max-width: 1170px) {
         max-width: 1138px !important;
@@ -27,6 +28,11 @@ body .page {
         text-align: center;
         color: $color-secondary;
         text-transform: uppercase;
+
+        @media(min-width: 992px) and (max-width: 1199px) {
+            font-size: 36px;
+            line-height: 52px;
+        }
 
         @media(max-width: 768px) {
             font-size: 24px;
@@ -54,9 +60,10 @@ body .page {
     }
 
     .sub-heading-big {
-        @media(max-width: 768px){
+        @media(max-width: 768px) {
             margin-bottom: 8px;
         }
+
         a,
         p {
             font-weight: 300;
@@ -64,7 +71,8 @@ body .page {
             font-size: 32px;
             font-family: $font-primary;
             color: #FFFFFFCC;
-            @media(max-width: 991px){
+
+            @media(max-width: 991px) {
                 font-size: 16px;
                 line-height: 24px;
             }
@@ -111,6 +119,7 @@ body .page {
             transition: all 0.4s;
             margin: 0 auto;
             box-shadow: 0 10px 40px 0 #5C47005C;
+            cursor: pointer;
 
             @media(max-width: 768px) {
                 font-size: 14px;
@@ -122,12 +131,16 @@ body .page {
                 background-color: $color-white !important;
                 color: $color-primary !important;
                 border: 1px solid $color-primary;
+
+                .loader {
+                    border: 3px solid $color-primary;
+                }
             }
         }
     }
 
-    .color-banner-heading{
-        @media(max-width:768px){
+    .color-banner-heading {
+        @media(max-width:768px) {
             color: #FFCB1F !important;
         }
     }

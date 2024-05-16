@@ -9,6 +9,16 @@ body .page {
         align-items: center;
         justify-content: center;
 
+        @media(max-width: 1199px) {
+            height: auto;
+            aspect-ratio: 1440 / 700;
+        }
+
+        @media(max-width: 991px) {
+            height: auto;
+            aspect-ratio: 375 / 500;
+        }
+
         .banner-heading {
             font-size: 48px;
             line-height: 72px;
@@ -61,6 +71,7 @@ body .page {
             width: 80%;
             margin: 0 auto;
             float: unset;
+
             @media(max-width: 991px) {
                 padding-top: 42px;
                 padding-bottom: 154px;
@@ -454,22 +465,37 @@ body .page {
                 .list-post {
                     padding: 0;
 
+                    .slick-track {
+                        display: flex;
+                        align-items: stretch;
+                    }
+
                     .slick-list {
                         padding-bottom: 48px;
                     }
 
                     .slick-slide {
                         margin: 0 15px;
+                        height: unset;
 
                         @media(max-width:768px) {
                             margin: 0;
                         }
+
+                        >div {
+                            height: 100%;
+                        }
                     }
 
                     .item-post {
+                        height: 100%;
 
                         .inner-post {
                             background-color: white;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0 16px 40px;
 
                             &:hover {
                                 cursor: pointer;
@@ -477,69 +503,62 @@ body .page {
                             }
                         }
 
-                        &__image {
-                            .box-img {
-                                aspect-ratio: 370 / 240;
-                                width: 100%;
+                        .box-img {
+                            aspect-ratio: 370 / 240;
+                            width: unset;
+                            margin: 0 -16px 24px;
 
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .post-name {
+                            a {
+                                font-family: $font-primary;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 24px;
+                                letter-spacing: -0.01px;
+                                color: $dark;
+                                transition: all 0.4s;
+                                @include limit-row(2);
+
+                                &:hover {
+                                    color: $color-primary;
                                 }
                             }
                         }
 
-                        &__content {
-                            padding: 20px 16px 32px;
+                        .post-excerpt {
+                            margin: 12px 0 28px;
 
-                            @media(max-width: 768px) {
-                                padding: 24px 16px 26px;
-                            }
+                            p {
+                                font-family: $font-primary;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 21px;
+                                letter-spacing: -0.01px;
+                                @include limit-row(3);
+                                color: $gray;
+                                transition: all 0.4s;
 
-                            .post-name {
-                                a {
-                                    font-family: $font-primary;
-                                    font-weight: 700;
-                                    font-size: 16px;
-                                    line-height: 24px;
-                                    letter-spacing: -0.01px;
-                                    color: $dark;
-                                    transition: all 0.4s;
+                                @media(max-width: 768px) {
                                     @include limit-row(2);
 
-                                    &:hover {
-                                        color: $color-primary;
-                                    }
                                 }
                             }
+                        }
 
-                            .post-excerpt {
-                                margin: 12px 0 28px;
+                        .post-link {
+                            text-align: right;
+                            margin-top: auto;
 
-                                p {
-                                    font-family: $font-primary;
-                                    font-weight: 400;
-                                    font-size: 14px;
-                                    line-height: 21px;
-                                    letter-spacing: -0.01px;
-                                    color: $gray;
-                                    transition: all 0.4s;
-
-                                    @media(max-width: 768px) {
-                                        @include limit-row(2);
-
-                                    }
-                                }
-                            }
-
-                            .post-link {
-                                text-align: right;
-
-                                a {
-                                    svg {
-                                        width: 49px;
-                                    }
+                            a {
+                                svg {
+                                    width: 49px;
                                 }
                             }
                         }

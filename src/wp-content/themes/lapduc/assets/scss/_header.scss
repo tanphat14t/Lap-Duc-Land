@@ -14,6 +14,16 @@
 
     &.scrolled {
         background-color: $color-secondary;
+        height: 110px;
+
+        @media(max-width: 991px) {
+            height: 90px;
+        }
+
+        .navbar .inner .navbar-brand {
+            top: 0;
+            height: 90px;
+        }
     }
 
 
@@ -68,6 +78,7 @@
                     @media(max-width: 991px) {
                         top: 72px;
                         z-index: 2;
+                        height: 120px;
                     }
                 }
 
@@ -108,14 +119,21 @@
                     display: flex;
                     justify-content: space-between;
                     width: 100%;
-                    padding: 44px 0 0 0;
+                    height: 100%;
+                    align-items: center;
+                    padding: 0;
 
                     @media(max-width: 991px) {
                         padding-top: 200px;
                         flex-direction: column;
+                        height: unset;
                     }
 
                     >.menu-item-has-children {
+                        @media(max-width: 991px) {
+                            width: 100%;
+                        }
+
                         &:not(:last-child) {
                             @media(max-width: 991px) {
                                 border-bottom: 1px solid #CFD8D71A;
@@ -133,11 +151,84 @@
                             padding: 0;
                             column-gap: 32px;
 
+                            @media(min-width: 992px) and (max-width: 1199px) {
+                                column-gap: 12px;
+                            }
+
                             @media(max-width: 991px) {
                                 flex-direction: column;
                             }
 
+
+
                             >.menu-item {
+                                &.pll-parent-menu-item {
+                                    position: relative;
+
+                                    @media(max-width: 991px) {
+                                        position: fixed;
+                                        width: max-content;
+                                        top: 0px;
+                                        right: 24px;
+                                    }
+
+                                    &:hover {
+                                        .sub-menu {
+                                            display: block;
+                                            position: absolute;
+                                            top: 100%;
+                                            padding: 16px 10px;
+                                            background-color: rgba(255, 255, 255, .8);
+                                            width: 100%;
+
+                                            .lang-item {
+                                                a {
+                                                    color: white;
+                                                    transition: all .4s;
+
+                                                    &:hover {
+                                                        color: $color-primary
+                                                    }
+                                                }
+
+                                                &.current-lang {
+                                                    a {
+                                                        color: $color-primary;
+
+                                                        &:hover {
+                                                            color: white;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    >a {
+                                        color: $color-primary;
+                                        padding: 6px 8px 6px 12px;
+                                        border: 1px solid $color-primary;
+                                        border-radius: 8px;
+                                        display: flex;
+                                        font-family: $font-primary;
+
+                                        &::after {
+                                            content: "";
+                                            background-image: url('../imgs/icons/arrow-down-s-fill.svg');
+                                            background-repeat: no-repeat;
+                                            background-size: contain;
+                                            background-position: center;
+                                            width: 24px;
+                                            height: 24px;
+                                            margin-left: 8px;
+                                        }
+                                    }
+
+                                    >.sub-menu {
+                                        display: none;
+                                    }
+                                }
+
                                 @media(max-width: 991px) {
                                     padding: 16px 0;
                                     border-bottom: 1px solid #CFD8D71A;

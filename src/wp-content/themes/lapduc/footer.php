@@ -95,7 +95,7 @@ if ($hotline) {
                         ?>
                     </div>
                     <div class="item-content">
-                        <div class="item-title"><?php echo __('Trụ sở chính', 'lapduc') ?></div>
+                        <div class="item-title"><?php echo __('Hotline', 'lapduc') ?></div>
                         <div class="item-submenu">
                             <?php if (!empty($phonenumber_hotline)) : ?>
                                 <div class="submenu-item phone">
