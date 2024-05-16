@@ -9,10 +9,10 @@ body .page {
         align-items: center;
         justify-content: center;
 
-        @media(max-width: 1199px) {
-            height: auto;
-            aspect-ratio: 1440 / 700;
-        }
+        // @media(max-width: 1199px) {
+        //     height: auto;
+        //     aspect-ratio: 1440 / 700;
+        // }
 
         @media(max-width: 991px) {
             height: auto;
@@ -445,7 +445,7 @@ body .page {
         }
 
         .news {
-            @media(max-width: 1290px) {
+            @media(max-width: 1400px) {
                 width: calc(100% - 140px);
                 margin: 0 auto;
             }
@@ -457,9 +457,8 @@ body .page {
             .post-wrapper {
                 margin: 0 -15px;
 
-                @media(max-width:768px) {
+                @media(max-width:525px) {
                     margin: 0;
-
                 }
 
                 .list-post {
@@ -478,7 +477,7 @@ body .page {
                         margin: 0 15px;
                         height: unset;
 
-                        @media(max-width:768px) {
+                        @media(max-width:525px) {
                             margin: 0;
                         }
 

@@ -55,7 +55,7 @@ function loadmore_recruiment()
                                 <span><?php echo __('Ngày Đăng Tuyển', 'lapduc') ?></span>
                                 <?php
                                 if (wp_is_mobile()) : ?>
-                                    <p><?php echo get_the_date('d / m / Y'); ?></p>
+                                    <p><?php echo get_the_date('d/m/Y'); ?></p>
                                 <?php else : ?>
                                     <p><?php echo 'Ngày ' . get_the_date('d') . ' Tháng ' . get_the_date('m') . ' Năm ' . get_the_date('Y'); ?></p>
                                 <?php endif; ?>
@@ -152,31 +152,27 @@ function pagination()
             while ($postKnowledge->have_posts()) : $postKnowledge->the_post(); ?>
                 <li class="item-news">
                     <div class="inner-news">
-                        <div class="item-news__image">
-                            <div class="box-img">
-                                <?php
-                                $image = get_post_thumbnail_id(get_the_ID());
-                                $size = 'large';
-                                if ($image) {
-                                    echo wp_get_attachment_image($image, $size);
-                                }
-                                ?>
-                            </div>
+                        <div class="box-img">
+                            <?php
+                            $image = get_post_thumbnail_id(get_the_ID());
+                            $size = 'large';
+                            if ($image) {
+                                echo wp_get_attachment_image($image, $size);
+                            }
+                            ?>
                         </div>
-                        <div class="item-news__content">
-                            <div class="news-name">
-                                <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>"><?php echo esc_html(get_the_title(get_the_ID())); ?></a>
-                            </div>
-                            <div class="news-excerpt">
-                                <?php
-                                echo '<p>' . esc_html(get_the_excerpt(get_the_ID())) . '</p>';
-                                ?>
-                            </div>
-                            <div class="news-link">
-                                <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>">
-                                    <?php include get_stylesheet_directory() . '/assets/imgs/icons/arrow-right.svg'; ?>
-                                </a>
-                            </div>
+                        <div class="news-name">
+                            <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>"><?php echo esc_html(get_the_title(get_the_ID())); ?></a>
+                        </div>
+                        <div class="news-excerpt">
+                            <?php
+                            echo '<p>' . esc_html(get_the_excerpt(get_the_ID())) . '</p>';
+                            ?>
+                        </div>
+                        <div class="news-link">
+                            <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>">
+                                <?php include get_stylesheet_directory() . '/assets/imgs/icons/arrow-right.svg'; ?>
+                            </a>
                         </div>
                     </div>
                 </li>

@@ -21,8 +21,9 @@
         }
 
         .navbar .inner .navbar-brand {
-            top: 0;
+            top: 50%;
             height: 90px;
+            transform: translate(-50%, -50%);
         }
     }
 
@@ -79,6 +80,8 @@
                         top: 72px;
                         z-index: 2;
                         height: 120px;
+                        transform: translate(-50%, 0);
+
                     }
                 }
 
@@ -153,6 +156,8 @@
 
                             @media(min-width: 992px) and (max-width: 1199px) {
                                 column-gap: 12px;
+                                z-index: 9999;
+                                position: relative;
                             }
 
                             @media(max-width: 991px) {
@@ -162,6 +167,19 @@
 
 
                             >.menu-item {
+                                &.color-primary {
+                                    a {
+                                        @media(min-width: 992px) {
+
+                                            color: $color-primary;
+
+                                            &:hover {
+                                                color: white;
+                                            }
+                                        }
+                                    }
+                                }
+
                                 &.pll-parent-menu-item {
                                     position: relative;
 
