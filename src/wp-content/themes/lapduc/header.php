@@ -19,12 +19,6 @@
 
 <body>
 	<header id="primary-header" class="<?php echo is_front_page() ? 'home-page' : '' ?>">
-		<?php if (is_front_page()) : ?>
-			<!-- <div class="background-header">
-				<img src="<?php //echo get_template_directory_uri() 
-							?>/assets/imgs/bg_header_home.png" alt="">
-			</div> -->
-		<?php endif; ?>
 		<nav class="navbar navbar-expand-lg p-0" role="navigation">
 			<div class="page-container h-100">
 				<div class="inner">

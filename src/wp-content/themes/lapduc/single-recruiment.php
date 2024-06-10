@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-contact">
-                        <h2 class="heading">Form Apply</h2>
+                        <h2 class="heading"><?php echo __('Form Apply', 'lapduc') ?></h2>
                         <?php echo do_shortcode('[contact-form-7 id="9659447" title="Form Apply"]') ?>
                     </div>
                 </div>

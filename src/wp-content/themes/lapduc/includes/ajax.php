@@ -165,9 +165,7 @@ function pagination()
                             <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>"><?php echo esc_html(get_the_title(get_the_ID())); ?></a>
                         </div>
                         <div class="news-excerpt">
-                            <?php
-                            echo '<p>' . esc_html(get_the_excerpt(get_the_ID())) . '</p>';
-                            ?>
+                            <?php echo '<p>' . esc_html(get_the_excerpt(get_the_ID())) . '</p>'; ?>
                         </div>
                         <div class="news-link">
                             <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>">
@@ -189,7 +187,7 @@ function pagination()
             $big = 999999999;
             $icPlay = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.6663 5.3335L20.6259 15.2931C21.0164 15.6836 21.0164 16.3167 20.6259 16.7073L10.6663 26.6668" stroke="#6F5B3A" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>';
+                       </svg>';
             echo '<div class="custom-pagination">';
             echo paginate_links(array(
                 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),

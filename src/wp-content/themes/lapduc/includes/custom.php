@@ -1,6 +1,6 @@
 <?php
-add_action('wp_enqueue_scripts', 'namtech_scripts');
-function namtech_scripts()
+add_action('wp_enqueue_scripts', 'lucius_scripts');
+function lucius_scripts()
 {
     $version = date("Hhis");
 

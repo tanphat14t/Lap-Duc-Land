@@ -463,7 +463,7 @@ function news_page($atts)
                 $argsKnowledge = array(
                     'post_type' => 'post',
                     'posts_per_page' => 6,
-                    'orderby' => 'date', // Sắp xếp theo ngày đăng
+                    'orderby' => 'date',
                     'order' => 'DESC',
                     'category_name' => 'kien-thuc-nganh',
                     'paged' => $paged
